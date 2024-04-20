@@ -1,0 +1,21 @@
+@use "../../assets/mixins.scss";
+
+.Pagination {
+  @include mixins.flex(row, center, center, 15px);
+  margin-top: 20px;
+
+  .page-btn__prev,
+  .page-btn__next {
+    border-radius: 50%;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.4);
+
+    .page-btn__link {
+      color: white;
+
+      .page-btn__icon {
+        font-size: 35px;
+      }
+    }
+  }
+}

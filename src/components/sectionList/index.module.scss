@@ -1,0 +1,56 @@
+@use "../../assets/mixins";
+
+.SectionList {
+  margin-top: 40px;
+
+  .title {
+    font-family: "VT323", monospace;
+    color: aqua;
+    text-shadow: 0 0 15px aqua;
+    letter-spacing: 2px;
+    font-size: 30px;
+    margin-bottom: 20px;
+
+    @include mixins.breakpoint(laptop) {
+      margin-left: 45px;
+    }
+  }
+
+  .carousel-container {
+    @include mixins.flex(row, center, center, 10px);
+
+    .prev-btn,
+    .next-btn {
+      border-radius: 50%;
+      border: none;
+      color: white;
+      background-color: rgba(0, 0, 0, 0.4);
+      display: none;
+
+      @include mixins.breakpoint(laptop) {
+        display: block;
+      }
+
+      .icon-arrow {
+        font-size: 40px;
+
+        &:hover {
+          color: aqua;
+        }
+      }
+    }
+
+    .carousel-list {
+      padding-bottom: 10px;
+      @include mixins.flex(row, flex-start, flex-start, 10px);
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      width: 100%;
+
+      @include mixins.breakpoint(laptop) {
+        overflow-x: hidden;
+      }
+    }
+  }
+}

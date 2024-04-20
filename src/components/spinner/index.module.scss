@@ -1,0 +1,20 @@
+.Spinner {
+  margin: auto;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 4px solid white;
+  border-top: 4px solid var(--main-color);
+  animation: loading 1s infinite linear;
+  position: absolute;
+  inset: 0;
+}
+
+@keyframes loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,143 @@
+@use "../assets/mixins";
+
+.game {
+  min-height: calc(100vh - 195px);
+  margin-bottom: 125px;
+  @include mixins.breakpoint(laptop) {
+    padding-inline: 30px;
+  }
+
+  .image_container {
+    background-color: rgba(0, 255, 255, 0.041);
+    position: relative;
+    height: 33vh;
+    @include mixins.breakpoint(laptop) {
+      height: 50vh;
+    }
+
+    .image {
+      padding: 10px 10px;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border: 1px solid aqua;
+      border-radius: 10px;
+      box-shadow: 0 0 10px aqua;
+      opacity: 1;
+    }
+
+    .hide-image {
+      opacity: 0;
+    }
+  }
+
+  .gallery {
+    @include mixins.flex(row, flex-start, flex-start, 10px);
+    margin-block: 20px;
+    overflow-y: auto;
+    scroll-snap-type: x mandatory;
+    height: auto;
+
+    &__img_container {
+      position: relative;
+      min-width: 150px;
+      scroll-snap-align: start;
+      padding-bottom: 10px;
+
+      @include mixins.breakpoint(laptop) {
+        min-width: 180px;
+      }
+
+      .image__gallery {
+        object-fit: cover;
+        opacity: 1;
+        height: 100px;
+        border-radius: 8px;
+        cursor: pointer;
+
+        @include mixins.breakpoint(laptop) {
+          height: 120px;
+        }
+      }
+
+      .hide-image__gallery {
+        opacity: 0;
+      }
+
+      .image__gallery__active {
+        border: 2px solid var(--main-color);
+      }
+    }
+  }
+
+  .title {
+    margin-bottom: 8px;
+    margin-bottom: 20px;
+  }
+  .description_container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+    .price,
+    .wishlisted,
+    .released,
+    .metacritic {
+      font-weight: bold;
+
+      span {
+        color: aqua;
+      }
+    }
+  }
+
+  .description_container2 {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    h3 {
+      color: var(--main-color);
+    }
+    p {
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+  }
+
+  .requirement_container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    h3 {
+      color: var(--main-color);
+    }
+
+    p {
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+  }
+
+  .button__container {
+    @include mixins.flex(row, flex-start, center, 10px);
+    margin-top: 8px;
+
+    .button {
+      padding: 8px;
+      background-color: deeppink;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      box-shadow: 0 0 5px 5px rgb(85, 0, 255);
+      cursor: pointer;
+      transition: all ease-in-out 0.2s;
+
+      &:hover {
+        background-color: darkmagenta;
+        transform: scale(1.2);
+      }
+    }
+  }
+}

@@ -1,0 +1,54 @@
+@use "../assets/mixins";
+
+.page_404 {
+  width: 100%;
+  min-height: calc(100vh - 170px);
+  @include mixins.flex(column, center, center, 20px);
+
+  @include mixins.breakpoint(laptop) {
+    min-height: calc(100vh - 121px);
+    @include mixins.flex(column, center, center, 30px);
+  }
+
+  .img__container {
+    width: 100%;
+
+    @include mixins.breakpoint(tablet) {
+      width: 70%;
+    }
+  }
+
+  .page_404__img {
+    width: 100%;
+    height: auto;
+
+    @include mixins.breakpoint(laptop) {
+      width: 100%;
+    }
+  }
+
+  .page_404__btn {
+    background: none;
+    color: #ea5bf7;
+    font-family: "VT323", monospace;
+    letter-spacing: 4px;
+    border: 1px solid aqua;
+    box-shadow: 0 0 10px aqua;
+    padding: 10px 15px;
+    font-size: 20px;
+    text-shadow: 0 0 10px #ea5bf7;
+    border-radius: 7px;
+
+    &:hover {
+      cursor: pointer;
+      border: 1px solid #ea5bf7;
+      box-shadow: 0 0 10px #ea5bf7;
+      color: aqua;
+    }
+
+    @include mixins.breakpoint(laptop) {
+      padding: 15px 30px;
+      font-size: 30px;
+    }
+  }
+}

@@ -1,0 +1,113 @@
+@use "../../assets/mixins";
+
+.carousel_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+
+  @include mixins.breakpoint(tablet) {
+    align-items: center;
+    height: 50vh;
+  }
+
+  @include mixins.breakpoint(laptop) {
+    align-items: center;
+    height: 60vh;
+    margin-top: 90px;
+  }
+
+  @include mixins.breakpoint(desktop) {
+    align-items: center;
+  }
+
+  .Carousel {
+    position: relative;
+    height: 250px;
+    transition: 0.5s;
+    border-radius: 8px;
+    width: 100%;
+
+    @include mixins.breakpoint(tablet) {
+      width: 100%;
+      height: 100%;
+    }
+    @include mixins.breakpoint(laptop) {
+      &:hover {
+        border: 1px solid aqua;
+        box-shadow: 0px 0px 25px 5px aqua;
+      }
+    }
+
+    .gradient {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        0deg,
+        var(--main-color) 5%,
+        rgba(255, 255, 255, 0) 35%
+      );
+      border-radius: 8px;
+    }
+
+    .cover {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .hide-cover {
+      opacity: 0;
+    }
+
+    .title {
+      @include mixins.position(absolute, auto, auto, 5px, 10px);
+      font-size: 20px;
+
+      @include mixins.breakpoint(desktop) {
+        font-size: 50px;
+      }
+    }
+  }
+
+  .addIcon {
+    @include mixins.position(relative, auto, auto, 25px, auto);
+
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 5px;
+    font-size: 20px;
+    gap: 8px;
+
+    @include mixins.breakpoint(desktop) {
+      font-size: 35px;
+      gap: 15px;
+      margin-right: 10px;
+      bottom: 42px;
+    }
+  }
+}
+.bullets {
+  margin-top: 20px;
+  @include mixins.flex(row, center, flex-start, 25px);
+
+  .bullet {
+    border-radius: 50%;
+    cursor: pointer;
+
+    .ghost {
+      font-size: 20px;
+      color: aqua;
+      filter: drop-shadow(0px 0px 7px aqua);
+    }
+
+    .bullet-pacman {
+      transform: scale(2.5);
+      color: yellow;
+      filter: drop-shadow(0px 0px 2px yellow);
+    }
+  }
+}

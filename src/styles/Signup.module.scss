@@ -1,0 +1,101 @@
+@use "../assets/mixins";
+
+.signup__container {
+  @include mixins.flex(column, center, center, 1.1rem);
+  font-family: "VT323", monospace;
+  min-height: calc(100vh - 49px);
+  border: 1px solid aqua;
+  border-radius: 10px;
+  padding: 10px;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 255, 255, 0.062),
+    #000000,
+    rgba(0, 255, 255, 0.062)
+  );
+
+  @include mixins.breakpoint(laptop) {
+    width: 70vw;
+    margin-inline: auto;
+  }
+
+  .signup__title {
+    font-size: 3rem;
+    color: deeppink;
+    text-shadow: 0 0 7px deeppink;
+  }
+
+  .signup__form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    .inputWrapper {
+      position: relative;
+
+      .password__Toggle {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #ec2593;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .signup__input {
+    font-family: inherit;
+    font-size: 20px;
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 1px solid aqua;
+    border-radius: 8px;
+    box-shadow: 0 0 10px aqua;
+    outline: none;
+    background-color: #19191d;
+    color: aqua;
+  }
+
+  .avatarP {
+    text-align: center;
+  }
+
+  .avatarGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    width: 180px;
+    height: 180px;
+    place-self: center;
+
+    img {
+      width: 100%;
+      height: auto;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 10px aqua;
+
+      &.selected {
+        border: 2px solid aqua;
+      }
+
+      &:hover {
+        border: 2px solid aqua;
+      }
+    }
+  }
+
+  .signup__btn {
+    padding: 0.5rem;
+    margin-top: 1.5rem;
+    border-radius: 5px;
+    border: 1px solid #ec2593;
+    background-color: transparent;
+    box-shadow: 0 0 10px #ec2593;
+    color: #ffff;
+    text-shadow: 0 0 10px #ec2593;
+    cursor: pointer;
+  }
+}

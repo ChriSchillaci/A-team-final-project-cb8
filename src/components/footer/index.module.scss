@@ -1,0 +1,161 @@
+@use "../../assets/mixins";
+
+.footer {
+  height: auto;
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 65px;
+
+  .footer_position {
+    @include mixins.flex(column, center, center, 20px);
+
+    @include mixins.breakpoint(tablet) {
+      @include mixins.flex(column, center, flex-start, 20px);
+    }
+    .aboutUs {
+      @include mixins.flex(column, center, center);
+      width: 100%;
+
+      img {
+        width: 150px;
+        height: auto;
+        object-fit: cover;
+      }
+
+      @include mixins.breakpoint(tablet) {
+        @include mixins.flex(row, center, center, 20px);
+      }
+      @include mixins.breakpoint(laptop) {
+        @include mixins.flex(column, flex-start, center, 20px);
+      }
+    }
+
+    .company,
+    .partner,
+    .help,
+    .newsletter {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+
+      .footer__titles {
+        font-family: "VT323", monospace;
+        font-size: 36px;
+      }
+
+      p {
+        margin: 10px 0;
+      }
+    }
+
+    .company_btn,
+    .partner_btn,
+    .help_btn {
+      display: flex;
+      gap: 18px;
+    }
+
+    .newsletter {
+      .newsletterForm {
+        input {
+          width: 80%;
+          height: 20px;
+          padding: 8px;
+          border-radius: 15px;
+          border: none;
+        }
+      }
+      .social {
+        display: flex;
+        justify-content: center;
+        margin-top: 15px;
+        margin-bottom: 10px;
+        font-size: 30px;
+        gap: 15px;
+      }
+    }
+
+    button {
+      margin: 10px 0;
+      background: none;
+      border: none;
+      color: white;
+      font-weight: bold;
+    }
+  }
+}
+
+@include mixins.breakpoint(laptop) {
+  .footer {
+    height: auto;
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    margin-bottom: 0;
+
+    .footer_position {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+
+      .aboutUs {
+        width: 15%;
+        display: flex;
+        flex-direction: column;
+
+        p {
+          max-width: 350px;
+        }
+      }
+      .company,
+      .partner,
+      .help {
+        width: 20%;
+      }
+
+      .company_btn,
+      .partner_btn,
+      .help_btn {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+        margin-top: 5px;
+      }
+
+      .newsletter {
+        width: 20%;
+
+        align-items: center;
+        gap: 20px;
+
+        .newsletterForm {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+
+          input {
+            width: 80%;
+            height: 30px;
+          }
+        }
+
+        .social {
+          margin-top: 20px;
+          display: flex;
+          gap: 10px;
+          font-size: 40px;
+        }
+      }
+      button {
+        background: none;
+        border: none;
+        color: white;
+      }
+    }
+  }
+}

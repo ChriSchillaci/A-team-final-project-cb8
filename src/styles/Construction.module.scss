@@ -1,0 +1,68 @@
+@use "../assets/mixins";
+
+.cons__Container {
+  @include mixins.flex(column, center, center, 40px);
+  font-family: "VT323", monospace;
+  min-height: calc(100vh - 160px);
+  text-align: center;
+  padding: 30px;
+
+  @include mixins.breakpoint(tablet) {
+    min-height: calc(100vh - 120px);
+  }
+  @include mixins.breakpoint(laptop) {
+    min-height: calc(100vh - 200px);
+  }
+
+  .cons__Image {
+    margin-top: 40px;
+    border: 1px solid #ffa601;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #ffe601;
+    width: 100%;
+    height: auto;
+
+    @include mixins.breakpoint(laptop) {
+      width: 600px;
+    }
+    @include mixins.breakpoint(desktop) {
+      width: 760px;
+    }
+  }
+
+  .cons__Title {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px #ffe601;
+    @include mixins.breakpoint(tablet) {
+      font-size: 3rem;
+    }
+  }
+
+  .cons__Message {
+    color: #ffa601;
+    font-size: 1.2rem;
+    @include mixins.breakpoint(tablet) {
+      font-size: 1.5rem;
+    }
+  }
+
+  .cons__Button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background: none;
+    color: white;
+    text-shadow: 0 0 10px #ffe601;
+    border: 1px solid #ffa601;
+    box-shadow: 0 0 10px #ffe601;
+    border-radius: 5px;
+    &:hover {
+      cursor: pointer;
+      color: #ffe601;
+      background-color: #ffa6012f;
+    }
+    @include mixins.breakpoint(tablet) {
+      font-size: 1.5rem;
+    }
+  }
+}

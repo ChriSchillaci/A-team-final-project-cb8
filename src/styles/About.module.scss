@@ -1,0 +1,67 @@
+@use "../assets/mixins";
+
+.about__Container {
+  @include mixins.flex(column, center, center, 20px);
+  min-height: calc(90vh - 49px);
+
+  @include mixins.breakpoint(laptop) {
+    .link {
+      font-size: 18.72px;
+      color: aqua;
+      text-decoration: none;
+      transition: color 0.3s ease-in-out;
+
+      &:hover {
+        color: #01012b;
+      }
+    }
+  }
+  .team__Container {
+    @include mixins.flex(column, center, flex-start, 20px);
+    margin-top: 2rem;
+
+    .team__Wrapper {
+      @include mixins.flex(column, center, flex-start, 20px);
+
+      @include mixins.breakpoint(laptop) {
+        @include mixins.flex(row, center, center, 15px);
+        flex-wrap: wrap;
+      }
+
+      .team__Info {
+        @include mixins.flex(row, center, center, 20px);
+
+        @include mixins.breakpoint(laptop) {
+          @include mixins.flex(column, center, center, 20px);
+
+          width: 180px;
+          font-size: 20px;
+        }
+
+        .team__Pic {
+          height: 120px;
+          width: 120px;
+          @include mixins.breakpoint(laptop) {
+          }
+          border-radius: 50%;
+        }
+
+        .team__Name {
+          text-align: center;
+        }
+
+        .team__Role {
+          text-align: right;
+          @include mixins.breakpoint(laptop) {
+            @include mixins.flex(column, center, center, 20px);
+            text-align: center;
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+  h1 {
+    font-size: 30px;
+  }
+}

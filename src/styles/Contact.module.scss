@@ -1,0 +1,118 @@
+@use "../assets/mixins";
+.contact_container {
+  min-height: calc(100vh - 121px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .contact {
+    font-family: "VT323", monospace;
+    border: 1px solid aqua;
+    padding: 10px;
+
+    @include mixins.flex(column, center, center);
+
+    min-height: 75vh;
+    width: 90vw;
+    box-shadow: 0 0 10px aqua;
+    border-radius: 10px;
+    gap: 20px;
+    background: linear-gradient(
+      90deg,
+      rgba(0, 255, 255, 0.062),
+      #000000,
+      rgba(0, 255, 255, 0.062)
+    );
+
+    @include mixins.breakpoint(tablet) {
+      margin-top: 52px;
+      width: 70vw;
+      min-height: 70vh;
+    }
+
+    @include mixins.breakpoint(laptop) {
+      top: 0;
+      min-height: 80vh;
+      width: 50vw;
+    }
+    @include mixins.breakpoint(desktop) {
+      width: 30vw;
+      min-height: 80vh;
+    }
+    .title {
+      font-size: 44px;
+      color: deeppink;
+      text-shadow: 0 0 7px deeppink;
+    }
+    .form {
+      .inputGroup {
+        margin-top: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+
+        label {
+          font-size: 22px;
+          text-shadow: 0 0 10px aqua;
+          color: aqua;
+        }
+
+        input {
+          font-family: "VT323", monospace;
+          width: 200px;
+          font-size: 16px;
+          padding: 0.5rem;
+          border-radius: 5px;
+          border: 1px solid aqua;
+          border-radius: 8px;
+          box-shadow: 0 0 10px aqua;
+          outline: none;
+          background-color: #19191d;
+          color: aqua;
+        }
+        textarea {
+          font-family: "VT323", monospace;
+          font-size: 20px;
+          width: 200px;
+          padding: 0.5rem;
+          border-radius: 5px;
+          border: 1px solid aqua;
+          border-radius: 8px;
+          box-shadow: 0 0 10px aqua;
+          outline: none;
+          background-color: #19191d;
+          color: aqua;
+        }
+      }
+
+      .contact-textarea {
+        height: 10rem;
+        resize: vertical;
+        border-radius: 25px;
+      }
+      .submitButton {
+        width: 50%;
+        padding: 0.5rem;
+        margin-top: 1.5rem;
+        border-radius: 5px;
+        border: 1px solid #ec2593;
+        background-color: transparent;
+        box-shadow: 0 0 10px #ec2593;
+        font-size: 16px;
+        color: #ffff;
+        text-shadow: 0 0 10px #ec2593;
+        transform: translateX(50%);
+        transition: all 0.5s;
+
+        &:hover {
+          cursor: pointer;
+          border: 1px solid aqua;
+          box-shadow: 0 0 10px aqua;
+          background-color: rgba(0, 255, 255, 0.116);
+        }
+      }
+    }
+  }
+}

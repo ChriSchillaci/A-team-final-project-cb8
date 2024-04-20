@@ -1,0 +1,68 @@
+@use "../../assets/mixins";
+
+.pref__Card,
+.lib__Card {
+  @include mixins.flex(row, center, center);
+
+  .pref__CardTitle,
+  .lib__CardTitle {
+    color: #ffffff;
+    margin-top: 20px;
+    margin-left: 4px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+    margin-top: 10px;
+    @include mixins.breakpoint(tablet) {
+      width: 330px;
+
+      @include mixins.breakpoint(laptop) {
+        width: 300px;
+      }
+    }
+  }
+
+  .pref__CardImage,
+  .lib__CardImage {
+    height: 180px;
+    width: 480px;
+
+    @include mixins.breakpoint(tablet) {
+      width: 330px;
+    }
+    @include mixins.breakpoint(laptop) {
+      width: 303px;
+    }
+  }
+
+  .pref__CardP,
+  .lib__CardP {
+    display: none;
+  }
+}
+
+.cart__Card {
+  @include mixins.flex(column, flex-start, flex-start, 10px);
+  margin-top: 20px;
+
+  .cart__CardTitle {
+    max-width: 70%;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+    margin-top: 10px;
+  }
+
+  .cart__CardImage {
+    border: 1px solid deeppink;
+    box-shadow: 0 0 10px deeppink;
+    width: 230px;
+    height: 120px;
+    object-fit: cover;
+
+    @include mixins.breakpoint(laptop) {
+    }
+  }
+}

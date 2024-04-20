@@ -1,0 +1,44 @@
+@use "../assets/mixins.scss";
+
+.store {
+  position: relative;
+  width: 100%;
+  gap: 50px;
+  justify-content: center;
+
+  a {
+    color: white;
+  }
+
+  .filterSection {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    position: relative;
+
+    .filterButton {
+      border: none;
+      background-color: transparent;
+      color: white;
+    }
+  }
+
+  .cardContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    @include mixins.breakpoint(desktop) {
+      gap: 20px;
+    }
+  }
+
+  .content {
+    width: 100%;
+    position: relative;
+  }
+
+  .blurred {
+    filter: blur(5px);
+  }
+}

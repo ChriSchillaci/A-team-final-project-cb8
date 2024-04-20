@@ -1,0 +1,23 @@
+.button {
+  width: 50px;
+  height: 30px;
+  padding: 8px;
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+  background: none;
+  border: 1px solid deeppink;
+  color: deeppink;
+  font-size: 18px;
+
+  border-radius: 8px;
+  box-shadow: 0 0 10px deeppink;
+  cursor: pointer;
+  transition: all ease-in-out 0.2s;
+
+  &:hover {
+    background-color: aqua;
+    transform: scale(1.2);
+  }
+}

@@ -1,0 +1,55 @@
+@use "../../assets/mixins";
+
+.modal {
+  @include mixins.flex(column, center, center);
+  @include mixins.position(fixed, 0, 0, 0, 0);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  animation: fadeIn 0.5s;
+  z-index: 1;
+
+  .modalContent {
+    @include mixins.flex(column, center, center);
+    text-align: center;
+    color: aqua;
+    padding: 20px;
+    border-radius: 10px;
+    height: auto;
+    width: 80%;
+    min-height: 100px;
+    max-width: 500px;
+    background-color: #19191df5;
+    box-shadow: 0 0 10px aqua;
+    text-shadow: 0 0 10px aqua;
+    border: 1px solid aqua;
+    animation: slideIn 0.5s;
+
+    @include mixins.breakpoint(laptop) {
+      font-size: 24px;
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-50px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}

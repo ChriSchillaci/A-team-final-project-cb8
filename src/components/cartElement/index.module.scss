@@ -1,0 +1,93 @@
+@use "../../assets/mixins";
+.card {
+
+    width: 40%;
+    height: 110px;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    
+    gap: 35px;
+
+    @include mixins.breakpoint(mobile){
+    width: 100%;
+    height: 110px;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    
+    gap: 35px;
+      
+    }
+  
+
+  img {
+    width: 150px;
+    height: 90px;   
+    border-radius: 15px 15px;
+
+    @include mixins.breakpoint(mobile){
+      width: 100px;
+      height: 70px;   
+    border-radius: 15px 15px;
+        
+      }
+  }
+
+  .cartItemButton{
+    padding: 8px;
+    background-color: deeppink;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    width: 130px;
+    height: 35px;
+    @include mixins.breakpoint(mobile){
+      display: none;
+        
+      }
+    
+    cursor: pointer;
+    transition: all ease-in-out 0.2s;
+   
+
+      &:hover {
+      background-color: rgba(255, 20, 147, 0.5);
+      transform: scale(1.2);
+      }
+    }
+
+    .textElement{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      gap: 5px;
+    }
+
+    .buttonContainer{
+      display: flex;
+      gap: 10px;
+          }
+
+    .mobileCartItemButton{
+      @include mixins.breakpoint(tablet){
+        display: none;
+          
+        }
+
+    }
+
+ 
+
+    
+    
+
+   
+  }
+
+
+

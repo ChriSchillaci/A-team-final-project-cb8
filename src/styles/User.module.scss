@@ -1,0 +1,79 @@
+@use "../assets/mixins";
+.user_page {
+  @include mixins.flex(column, center, center);
+  min-height: calc(90vh - 49px);
+
+  .user__Container {
+    border: 1px solid aqua;
+    padding-block: 20px;
+    padding-inline: 10px;
+    @include mixins.flex(column, center, center);
+    box-shadow: 0 0 10px aqua;
+    border-radius: 10px;
+    background: linear-gradient(
+      90deg,
+      rgba(0, 255, 255, 0.062),
+      #000000,
+      rgba(0, 255, 255, 0.062)
+    );
+
+    @include mixins.breakpoint(desktop) {
+      width: 50vw;
+    }
+
+    .user__Image {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 1px solid aqua;
+      box-shadow: 0 0 10px aqua;
+      margin-bottom: 20px;
+    }
+
+    .user__Name {
+      text-transform: capitalize;
+      font-size: 36px;
+      text-shadow: 0 0 8px aqua;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .user__ListContainer {
+      @include mixins.flex(column, inherit, flex-start);
+      margin-top: 20px;
+      padding: 10px;
+      gap: 25px;
+
+      .wishlist_container,
+      .cart_container,
+      .library_container {
+        h2 {
+          color: #ffa5d7;
+          text-shadow: 0 0 8px #ec2593;
+        }
+        .text_content {
+          margin-top: 5px;
+          list-style-type: none;
+          span {
+            font-size: 20px;
+            color: aqua;
+            text-shadow: 0 0 10px aqua;
+          }
+        }
+      }
+    }
+    .user__Btn {
+      margin-top: 20px;
+      padding: 10px 20px;
+      border-radius: 10px;
+      border: 1px solid aqua;
+      box-shadow: 0 0 10px aqua;
+      background: none;
+      color: rgb(255, 255, 255);
+      text-shadow: 0 0 10px aqua;
+      font-size: 18px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+  }
+}
