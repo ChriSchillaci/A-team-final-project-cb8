@@ -76,9 +76,10 @@ svg {
   max-width: 1440px;
 
   margin-inline: auto;
-  margin-top: 70px;
+  margin-top: 49px;
   margin-bottom: 50px;
   padding-inline: 16px;
+  padding-top: 21px;
   @include mixins.breakpoint(laptop) {
     padding-inline: 40px;
   }

@@ -3,9 +3,6 @@
 .game {
   min-height: calc(100vh - 195px);
   margin-bottom: 125px;
-  @include mixins.breakpoint(laptop) {
-    padding-inline: 30px;
-  }
 
   .image_container {
     background-color: rgba(0, 255, 255, 0.041);

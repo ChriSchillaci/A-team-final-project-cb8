@@ -5,7 +5,6 @@
   font-family: "VT323", monospace;
   min-height: calc(100vh - 160px);
   text-align: center;
-  padding: 30px;
 
   @include mixins.breakpoint(tablet) {
     min-height: calc(100vh - 120px);
@@ -32,8 +31,8 @@
 
   .cons__Title {
     font-size: 2.5rem;
-    margin-bottom: 20px;
     text-shadow: 0 0 10px #ffe601;
+
     @include mixins.breakpoint(tablet) {
       font-size: 3rem;
     }
@@ -42,6 +41,7 @@
   .cons__Message {
     color: #ffa601;
     font-size: 1.2rem;
+
     @include mixins.breakpoint(tablet) {
       font-size: 1.5rem;
     }
@@ -56,11 +56,13 @@
     border: 1px solid #ffa601;
     box-shadow: 0 0 10px #ffe601;
     border-radius: 5px;
+
     &:hover {
       cursor: pointer;
       color: #ffe601;
       background-color: #ffa6012f;
     }
+
     @include mixins.breakpoint(tablet) {
       font-size: 1.5rem;
     }

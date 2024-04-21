@@ -1,6 +1,6 @@
 @use "../assets/mixins";
 .contact_container {
-  min-height: calc(100vh - 121px);
+  min-height: calc(100vh - 49px);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -26,20 +26,17 @@
     );
 
     @include mixins.breakpoint(tablet) {
-      margin-top: 52px;
-      width: 70vw;
-      min-height: 70vh;
+      max-width: 70vw;
     }
 
     @include mixins.breakpoint(laptop) {
-      top: 0;
-      min-height: 80vh;
-      width: 50vw;
+      // width: 50vw;
     }
+
     @include mixins.breakpoint(desktop) {
-      width: 30vw;
-      min-height: 80vh;
+      max-width: 40vw;
     }
+
     .title {
       font-size: 44px;
       color: deeppink;
@@ -54,14 +51,18 @@
         gap: 1rem;
 
         label {
-          font-size: 22px;
+          font-size: 18px;
           text-shadow: 0 0 10px aqua;
           color: aqua;
+
+          @include mixins.breakpoint(tablet) {
+            font-size: 22px;
+          }
         }
 
         input {
           font-family: "VT323", monospace;
-          width: 200px;
+          width: 180px;
           font-size: 16px;
           padding: 0.5rem;
           border-radius: 5px;
@@ -71,9 +72,14 @@
           outline: none;
           background-color: #19191d;
           color: aqua;
+
+          @include mixins.breakpoint(tablet) {
+            width: 200px;
+          }
         }
         textarea {
           font-family: "VT323", monospace;
+          resize: none;
           font-size: 20px;
           width: 200px;
           padding: 0.5rem;
@@ -89,7 +95,6 @@
 
       .contact-textarea {
         height: 10rem;
-        resize: vertical;
         border-radius: 25px;
       }
       .submitButton {

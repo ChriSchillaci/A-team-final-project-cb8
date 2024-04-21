@@ -27,7 +27,7 @@ const Index = () => {
     return () => {
       window.removeEventListener("storage", handleStorageChange);
     };
-  }, [isAuthenticated]);
+  }, [isAuthenticated, router.pathname]);
 
   const fetchUser = async (username) => {
     try {
