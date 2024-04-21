@@ -33,7 +33,7 @@ To get started with NovaGaming locally, follow these steps:
 4. Create a `.env.local` file in the root directory and define the following environment variables: ACCESSTOKEN_SECRET= / DATABASE_URI= / NEXT_PUBLIC_API_KEY=
 5. Run the development server using `npm run dev`.
 6. Visit `http://localhost:3000` in your web browser to access NovaGaming in local.
-7. Visit `a-team-final-project-cb-8.vercel.app` in your web browser to access NovaGaming Deployment.
+7. Visit `https://a-team-final-project-cb8.vercel.app/` in your web browser to access NovaGaming Deployment.
 
 ## Contributing
 
