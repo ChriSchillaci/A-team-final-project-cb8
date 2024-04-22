@@ -41,11 +41,11 @@
     }
 
     .title {
-      font-family: "Orbitron", sans-serif;
+      font-family: "Orbitron Variable", sans-serif;
       margin-top: 0.8rem;
       letter-spacing: 10px;
       font-size: 18px;
-      text-shadow: 0px 0px 10px #ec2593;
+      text-shadow: 0 0 10px #ec2593;
 
       @include mixins.breakpoint(tablet) {
         font-size: 30px;
@@ -70,53 +70,59 @@
       flex-direction: column;
       align-items: center;
       gap: 1rem;
-    }
 
-    .inputWrapper {
-      position: relative;
-      .login__input {
+      .inputWrapper {
+        position: relative;
+
+        .login__input {
+          font-family: "VT323", monospace;
+          padding: 0.5rem;
+          border-radius: 5px;
+          border: 1px solid aqua;
+          border-radius: 8px;
+          box-shadow: 0 0 10px aqua;
+          outline: none;
+          background-color: #19191d;
+          color: deeppink;
+        }
+
+        .password__Toggle {
+          position: absolute;
+          top: 50%;
+          right: 10px;
+          transform: translateY(-50%);
+          color: #ec2593;
+          cursor: pointer;
+        }
+      }
+
+      .msg {
+        font-family: "VT323", monospace;
+      }
+
+      .login__btn {
         font-family: "VT323", monospace;
         padding: 0.5rem;
+        margin-top: 1.5rem;
+        margin-bottom: 0.8rem;
         border-radius: 5px;
+        background-color: transparent;
         border: 1px solid aqua;
-        border-radius: 8px;
         box-shadow: 0 0 10px aqua;
-        outline: none;
-        background-color: #19191d;
-        color: deeppink;
-      }
+        font-size: 18px;
+        color: #ffff;
+        text-shadow: 0 0 10px #ec2593;
+        &:hover {
+          border: 1px solid #ec2593;
+          box-shadow: 0 0 10px #ec2593;
+          background-color: rgba(255, 20, 145, 0.116);
+          cursor: pointer;
+        }
 
-      .password__Toggle {
-        position: absolute;
-        top: 50%;
-        right: 10px;
-        transform: translateY(-50%);
-        color: #ec2593;
-        cursor: pointer;
-      }
-    }
-
-    .login__btn {
-      font-family: "VT323", monospace;
-      padding: 0.5rem;
-      margin-top: 1.5rem;
-      margin-bottom: 0.8rem;
-      border-radius: 5px;
-      background-color: transparent;
-      border: 1px solid aqua;
-      box-shadow: 0 0 10px aqua;
-      font-size: 18px;
-      color: #ffff;
-      text-shadow: 0 0 10px #ec2593;
-      &:hover {
-        border: 1px solid #ec2593;
-        box-shadow: 0 0 10px #ec2593;
-        background-color: rgba(255, 20, 145, 0.116);
-        cursor: pointer;
-      }
-      @include mixins.breakpoint(tablet) {
-        font-size: 22px;
-        padding: 7px 15px;
+        @include mixins.breakpoint(tablet) {
+          font-size: 22px;
+          padding: 7px 15px;
+        }
       }
     }
   }

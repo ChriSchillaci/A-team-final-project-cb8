@@ -110,7 +110,7 @@ const Login = () => {
               />
             </div>
           </div>
-          {modalVisible && <p>{modalMessage}</p>}
+          {modalVisible && <p className={styles.msg}>{modalMessage}</p>}
           <button type="submit" className={styles.login__btn}>
             Login
           </button>
